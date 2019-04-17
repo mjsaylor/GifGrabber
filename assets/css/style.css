@@ -18,13 +18,20 @@ header {
 
 
 /* input form */
+.hero-form {
+	margin: 20px auto;
+	align-content: center;
+	text-align: center;
+}
 .hero-input-label {
     font-family: 'Black Ops One', cursive;
     color: #D7CBD8;
-    font-size: 18px;
+	font-size: 20px;
+	margin: 20px;
 }
 
 #add-hero {
+	margin: 20px;
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -64,9 +71,14 @@ header {
 	position:relative;
 	top:1px;
 }
+
+.hero-input {
+	border-radius: 8px;
+	width: 200px;
+}
 /* hero button styling */
 
-/* parent container */
+/* parent button container */
 .buttons {
     margin: 20px auto;
     display: flex;
@@ -76,7 +88,7 @@ header {
     align-content: flex-start;
 }
 
-/* children */
+/* children buttons*/
 .hero-button {
     margin: 15px;
 	-moz-box-shadow:inset 0px 1px 0px 0px #97c4fe;
@@ -117,4 +129,21 @@ header {
 .hero-button:active {
 	position:relative;
 	top:1px;
+}
+
+/* gif div styling */
+
+/* parent gif container */
+.gifs {
+	margin: 20px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+}
+
+/* children gifs */
+.gifDiv {
+
 }

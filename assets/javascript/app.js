@@ -41,6 +41,7 @@ function renderGifs() {
 
             for (var i = 0; i < results.length; i++) {
                 var gifDiv = $("<div>");
+                gifDiv.addClass("gifDiv");
 
                 var rating = results[i].rating;
 
