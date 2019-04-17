@@ -47,11 +47,11 @@ function renderGifs() {
                 var p = $("<p>").text("Rating: " + rating);
 
                 var heroImage = $("<img>");
-                heroImage.attr("src", results[i].images.fixed_height_still.url);
-                heroImage.attr("data-still", results[i].images.fixed_height_still.url);
-                heroImage.attr("data-animate", results[i].images.fixed_height.url);
-                heroImage.attr("data-state", "still")
-                heroImage.addClass("gif")
+                heroImage.attr("src", results[i].images.fixed_height_still.url)
+                    .attr("data-still", results[i].images.fixed_height_still.url)
+                    .attr("data-animate", results[i].images.fixed_height.url)
+                    .attr("data-state", "still")
+                    .addClass("gif");
 
                 gifDiv.prepend(p);
                 gifDiv.prepend(heroImage);
@@ -71,8 +71,9 @@ function animateGifs () {
         $(this).attr("src", animateValue);
         $(this).attr("data-state", "animate")
     } else {
+        console.log("State:" + state)
         $(this).attr("src", $(this).attr("data-still"));
-        $(this).attr("data-state", "animate");
+        $(this).attr("data-state", "still");
     }
 }
 
