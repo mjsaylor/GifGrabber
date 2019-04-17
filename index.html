@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js' ></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <title>Gif Grabber</title>
 </head>
-<body>
-    
 
+<body>
+    <div class="container">
+    <header class="header">
+        <h1>Super Hero Gif Grabber!</h1>
+    </header>
+
+    <div class="buttons" id="render-buttons">
+        
+    </div>
+
+    <form id="hero-form">
+            <label for="hero-input">Add a hero to the team!</label>
+            <input type="text" id="hero-input"><br>
+      
+            <!-- Button triggers new hero to be added -->
+            <input id="add-hero" type="submit" value="Add Hero">
+          </form>
+
+    <div class="gifs" id="render-gifs"></div>
+
+
+</div>
     <script src="assets/javascript/app.js"></script>
 </body>
+
 </html>
