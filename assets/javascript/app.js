@@ -47,7 +47,11 @@ function renderGifs() {
                 var p = $("<p>").text("Rating: " + rating);
 
                 var heroImage = $("<img>");
-                heroImage.attr("src", results[i].images.fixed_height.url);
+                heroImage.attr("src", results[i].images.fixed_height_still.url);
+                heroImage.attr("data-still", results[i].images.fixed_height_still.url);
+                heroImage.attr("data-animate", results[i].images.fixed_height.url);
+                heroImage.attr("data-state", "still")
+                heroImage.addClass("gif")
 
                 gifDiv.prepend(p);
                 gifDiv.prepend(heroImage);
@@ -58,6 +62,21 @@ function renderGifs() {
 
 };
 
+function animateGifs () {
+    var state = $(this).attr("data-state");
+    console.log(state)
+
+    if (state == "still") {
+        var animateValue = $(this).attr("data-animate");
+        $(this).attr("src", animateValue);
+        $(this).attr("data-state", "animate")
+    } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "animate");
+    }
+}
+
 $(document).on("click", ".hero-button", renderGifs);
+$(document).on("click", ".gif", animateGifs);
 
 renderButtons();
