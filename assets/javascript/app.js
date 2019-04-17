@@ -3,6 +3,7 @@ var heroes = ["Thor", "Captain America", "Hulk", "Black Widow", "Hawkeye", "Iron
 
 
 function renderButtons() {
+    $("#hero-input").val("")
     $("#render-buttons").empty();
     for (var i = 0; i < heroes.length; i++) {
         var a = $("<button>");
@@ -15,7 +16,7 @@ function renderButtons() {
 
 $("#add-hero").on("click", function (event) {
     event.preventDefault();
-    
+ 
     var hero = $("#hero-input").val().trim();
     if (heroes.includes(hero)) {
         console.log("Already Added")
