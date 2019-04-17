@@ -4,7 +4,6 @@ var heroes = ["Thor", "Captain America", "Hulk", "Black Widow", "Hawkeye", "Iron
 
 function renderButtons() {
     $("#render-buttons").empty();
-
     for (var i = 0; i < heroes.length; i++) {
         var a = $("<button>");
         a.addClass("hero-button");
@@ -16,6 +15,7 @@ function renderButtons() {
 
 $("#add-hero").on("click", function (event) {
     event.preventDefault();
+    
     var hero = $("#hero-input").val().trim();
     if (heroes.includes(hero)) {
         console.log("Already Added")
@@ -29,7 +29,6 @@ $("#add-hero").on("click", function (event) {
 
 
 function renderGifs() {
-
     var hero = $(this).attr("data-hero");
     console.log(this)
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + hero + "&api_key=SWdoMuBNH9GrMPaYWBF4V2TfSNYgGvlK&limit=10";
@@ -77,8 +76,11 @@ function animateGifs () {
         $(this).attr("data-state", "still");
     }
 }
+// function clearInput(){
+//     $("#hero-input").text(" ")
+// }
 
 $(document).on("click", ".hero-button", renderGifs);
 $(document).on("click", ".gif", animateGifs);
-
+// $(document).on("click", "#hero-input", clearInput);
 renderButtons();
