@@ -77,11 +77,9 @@ function animateGifs () {
         $(this).attr("data-state", "still");
     }
 }
-// function clearInput(){
-//     $("#hero-input").text(" ")
-// }
+
 
 $(document).on("click", ".hero-button", renderGifs);
 $(document).on("click", ".gif", animateGifs);
-// $(document).on("click", "#hero-input", clearInput);
+
 renderButtons();
